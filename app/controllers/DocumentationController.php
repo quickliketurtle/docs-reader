@@ -1,9 +1,9 @@
 <?php
 
-use \dflydev\markdown\MarkdownParser as Markdown;
+use \Michelf\MarkdownExtra as Markdown;
 
 /**
- * Hande requests for documentation.
+ * Handler requests for documentation.
  *
  * @author Dayle Rees <me@daylerees.com>
  * @copyright  Dayle Rees 2013.
@@ -38,7 +38,7 @@ class DocumentationController extends Controller {
 			array_walk($data, function(&$raw) use ($markdown) {
 				$path = base_path().Config::get('docs.path', '/docs');
 				$raw = File::get($path."/{$raw}.md");
-				$raw = $markdown->transformMarkdown($raw);
+                $raw = $markdown->transform($raw);
 			});
 
 		}

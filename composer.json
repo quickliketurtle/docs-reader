@@ -1,7 +1,7 @@
 {
 	"require": {
 		"laravel/framework": "4.1.*",
-		"dflydev/markdown": "v1.0.2"
+        "michelf/php-markdown": "1.4.0"
 	},
 	"autoload": {
 		"classmap": [
